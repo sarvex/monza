@@ -57,7 +57,7 @@ for line in sys.stdin:
     continue
   if symbol_info[0] != "U":
     continue
-  if not symbol_info[1] in allowed_function:
+  if symbol_info[1] not in allowed_function:
     error_string = f"Undefined dependency in monza C/C++ runtimes {symbol_info[1]}"
     print(error_string, file=sys.stderr)
     success = False
